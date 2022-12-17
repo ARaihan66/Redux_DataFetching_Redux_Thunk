@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import ViewPage from './Pages';
+import ViewPage from './Pages/ViewPage';
 
 function App() {
   return (

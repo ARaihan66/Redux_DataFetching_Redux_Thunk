@@ -1,16 +1,24 @@
-import axios from 'axios';
 import { REQUEST_DATA, GET_DATA, ERROR_DATA } from './Constant';
 
-export const GetAllData = (dispatch) => {
-    dispatch({ type: REQUEST_DATA })
-    axios('https://jsonplaceholder.typicode.com/todos')
-        .then(res => {
-            dispatch({
-                type: GET_DATA,
-                payload: res.data
-            })
-                .catch(err => {
-                    dispatch(ERROR_DATA)
-                })
-        })
+export const resquestData = () => {
+    return {
+        type: REQUEST_DATA
+    }
 }
+
+export const getData = (data) => {
+    return {
+        type: GET_DATA,
+        payload: data
+    }
+}
+
+
+export const errorData = (err) => {
+    return {
+        type: ERROR_DATA,
+        payload: err
+    }
+}
+
+
